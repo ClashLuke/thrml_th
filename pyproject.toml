@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thrml-th"
+version = "0.1.0"
+description = "PyTorch + THRML interop shim (thrml.th)."
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+authors = [{name = "Extropic"}]
+dependencies = [
+  "thrml>=0.1.0",
+  "torch>=2.4",
+  "jax>=0.4.30",
+  "jaxlib>=0.4.30",
+  "equinox>=0.11.4",
+  "jaxtyping>=0.2.31",
+  "torchax>=0.0.9"
+]
+keywords = ["thrml", "torch", "jax", "pgm", "interop"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Libraries",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-xdist>=3.5",
+  "rich>=13.7",
+  "ruff>=0.6",
+  "pre-commit>=3.7",
+]
+torchax = ["torchax>=0.0.10"]
+
+[project.urls]
+Homepage = "https://github.com/extropic-ai/thrml"
+Source = "https://github.com/extropic-ai/thrml/tree/main/thrml_th"
+Documentation = "https://github.com/extropic-ai/thrml/tree/main/thrml_th/README.md"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["thrml_th*"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "TID"]
+ignore = ["E203"]
