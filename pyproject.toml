@@ -5,11 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "thrml-th"
 version = "0.1.0"
-description = "PyTorch + THRML interop shim (thrml.th)."
+description = "PyTorch + THRML interop shim (thrml_th)."
 readme = "README.md"
 license = {file = "LICENSE"}
 requires-python = ">=3.11"
-authors = [{name = "Extropic"}]
+authors = [{name = "Lucas Nestler"}]
 dependencies = [
   "thrml>=0.1.0",
   "torch>=2.4",
@@ -43,9 +43,9 @@ dev = [
 torchax = ["torchax>=0.0.10"]
 
 [project.urls]
-Homepage = "https://github.com/extropic-ai/thrml"
-Source = "https://github.com/extropic-ai/thrml/tree/main/thrml_th"
-Documentation = "https://github.com/extropic-ai/thrml/tree/main/thrml_th/README.md"
+Homepage = "https://github.com/ClashLuke/thrml_th"
+Source = "https://github.com/ClashLuke/thrml_th"
+Documentation = "https://github.com/ClashLuke/thrml_th/README.md"
 
 [tool.setuptools]
 include-package-data = true
